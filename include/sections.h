@@ -14,8 +14,9 @@ private:
 
 public:
     Sections(const std ::string &sectionName, const std ::string &brancName);
-    void addStudent(const Student &s) {};
-    void displayStudents() const {};
+    void addStudent(const Student &s);
+    void displayStudents() const;
+    std ::string getSectionName() const;
 };
 
 #endif
