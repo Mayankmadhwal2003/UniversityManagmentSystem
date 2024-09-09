@@ -6,9 +6,10 @@ void UniversitySystem::addStudent(const Student &student)
     students.push_back(student);
 }
 
-void UniversitySystem::addFacultyMember(const FacultyMember &facultyMember)
+void UniversitySystem::addFacultyMember(const FacultyMember &facultyMember, const Branch &branch)
 {
     facultyMembers.push_back(facultyMember);
+    branchFaculty[branch].push_back(facultyMember);
 }
 
 void UniversitySystem::addCourse(const Course &course)
@@ -65,4 +66,21 @@ void UniversitySystem::viewCourseDetails(const std::string &courseName) const
         }
     }
     std::cout << "Course not found!" << std::endl;
+}
+
+void UniversitySystem::viewBranchFaculty(const Branch &branch) const
+{
+    for (auto &it : branchFaculty)
+    {
+        if (it.first.getBranchName() == branch.getBranchName())
+        {
+            std::cout << "Branch: " << it.first.getBranchName() << std::endl;
+            std::cout << "Faculty Members:" << std::endl;
+            for (const auto &faculty : it.second)
+            {
+                faculty.viewDetails();
+            }
+            return;
+        }
+    }
 }

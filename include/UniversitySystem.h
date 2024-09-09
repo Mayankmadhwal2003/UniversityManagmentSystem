@@ -17,11 +17,12 @@ private:
     std::vector<Course> courses;
     std::vector<Transaction> transactions;
     std::vector<Branch> branches;
-    std ::map<Branch, std ::vector<Sections>> branchSections;
+    std::map<Branch, std::vector<Sections>> branchSections;
+    std::map<Branch, std::vector<FacultyMember>> branchFaculty;
 
 public:
     void addStudent(const Student &student);
-    void addFacultyMember(const FacultyMember &facultyMember);
+    void addFacultyMember(const FacultyMember &facultyMember, const Branch &branch);
     void addCourse(const Course &course);
     void addTransaction(const Transaction &transaction);
     void addSectionBranch(const Sections &section, const Branch &branch);
@@ -30,6 +31,7 @@ public:
     void viewFacultyDetails(int facultyId) const;
     void viewCourseDetails(const std::string &courseName) const;
     void viewBranchSections(const Branch &branch) const;
+    void viewBranchFaculty(const Branch &branch) const;
 
     // Additional functionality can be added here
 };
