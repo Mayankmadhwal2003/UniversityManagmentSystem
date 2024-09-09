@@ -3,7 +3,7 @@
 #include <algorithm> // For std::find
 
 FacultyMember::FacultyMember(const std::string &name, int id, const std::string &contactInfo)
-    : User(name, id, contactInfo) {}
+    : User(name, id, contactInfo, NULL) {}
 
 std::vector<std::string> FacultyMember::getAssignedCourses() const
 {

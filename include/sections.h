@@ -11,11 +11,13 @@ private:
     std ::string sectionName;
     std ::vector<Student> students;
     std ::string branchname;
+    int sectionCount;
 
 public:
-    Sections(const std ::string &sectionName, const std ::string &brancName);
+    Sections(const std ::string &sectionName, const std ::string &brancName, int sectionCount);
     void addStudent(const Student &s);
     void displayStudents() const;
+    int getSectionCount() const;
     std ::string getSectionName() const;
 };
 

@@ -1,7 +1,7 @@
 #include "../include/administrator.h"
 
 Administrator::Administrator(const std::string &name, int id, const std::string &contactInfo)
-    : User(name, id, contactInfo) {}
+    : User(name, id, contactInfo, NULL) {}
 
 void Administrator::manageStudent(Student &student)
 {
