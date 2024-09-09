@@ -8,6 +8,7 @@
 int main()
 {
     // Create some users
+    /*
     Student student1("Alice", 1, "alice@example.com", 90.0, 1000.0, "ECE", "A");
     FacultyMember faculty1("Dr. Smith", 101, "smith@example.com");
     Course course1("Intro to Programming", &faculty1);
@@ -28,4 +29,5 @@ int main()
     system.viewCourseDetails("Intro to Programming");
 
     return 0;
+    */
 }

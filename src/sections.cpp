@@ -2,6 +2,9 @@
 #include <iostream>
 #include "../include/sections.h"
 
+Sections ::Sections(const std ::string &sectionName, const std ::string &brancName, int sectionCount) : sectionName(sectionName),
+                                                                                                        branchname(branchname), sectionCount(sectionCount) {}
+
 void Sections ::addStudent(const Student &s)
 {
     if (s.getBranchName() != this->branchname)
@@ -33,3 +36,5 @@ void Sections ::displayStudents() const
 }
 
 std ::string Sections ::getSectionName() const { return this->sectionName; }
+
+int Sections ::getSectionCount() const { return this->sectionCount; }

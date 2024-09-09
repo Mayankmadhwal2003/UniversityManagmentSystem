@@ -21,6 +21,11 @@ void UniversitySystem::addTransaction(const Transaction &transaction)
     transactions.push_back(transaction);
 }
 
+void UniversitySystem ::addSectionBranch(const Sections &section, const Branch &branch)
+{
+    branchSections[branch].push_back(section);
+}
+
 void UniversitySystem::viewStudentDetails(int studentId) const
 {
     for (const auto &student : students)

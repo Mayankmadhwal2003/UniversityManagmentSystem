@@ -6,24 +6,27 @@
 #include "student.h"
 #include "faculty.h"
 
-class Course {
+class Course
+{
 private:
+    std::string courseBranch;
     std::string courseName;
-    FacultyMember* instructor;
-    std::vector<Student*> enrolledStudents;
+    FacultyMember *instructor;
+    std::vector<Student *> enrolledStudents;
 
 public:
-    Course(const std::string& courseName, FacultyMember* instructor);
+    Course(const std::string &courseName, FacultyMember *instructor, const std::string &courseBranch);
 
     // Getter and Setter methods
     std::string getCourseName() const;
-    void setCourseName(const std::string& courseName);
-    
-    FacultyMember* getInstructor() const;
-    void setInstructor(FacultyMember* instructor);
+    void setCourseName(const std::string &courseName);
 
-    void enrollStudent(Student* student);
+    FacultyMember *getInstructor() const;
+    void setInstructor(FacultyMember *instructor);
+
+    void enrollStudent(Student *student);
     void listEnrolledStudents() const;
+    std::string getCourseBranch() const;
 
     ~Course();
 };

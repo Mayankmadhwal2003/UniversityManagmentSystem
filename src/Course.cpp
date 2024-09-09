@@ -1,8 +1,8 @@
 #include "../include/course.h"
 #include <iostream>
 
-Course::Course(const std::string &courseName, FacultyMember *instructor)
-    : courseName(courseName), instructor(instructor) {}
+Course::Course(const std::string &courseName, FacultyMember *instructor, const std ::string &courseBranch)
+    : courseName(courseName), instructor(instructor), courseBranch(courseBranch) {}
 
 std::string Course::getCourseName() const
 {
@@ -40,4 +40,8 @@ void Course::listEnrolledStudents() const
     std::cout << std::endl;
 }
 
-Course::~Course() {}
+std ::string Course::getCourseBranch() const { return this->courseBranch; }
+
+Course::~Course()
+{
+}
