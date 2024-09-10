@@ -27,6 +27,33 @@ void UniversitySystem ::addSectionBranch(const Sections &section, const Branch &
     branchSections[branch].push_back(section);
 }
 
+void UniversitySystem::removeStudent(const Student &student)
+{
+
+    for (auto it = students.begin(); it != students.end(); ++it)
+    {
+        if (it->getId() == student.getId())
+        {
+            students.erase(it);
+            return;
+        }
+    }
+    std::cout << "Student not found!" << std::endl;
+}
+
+void UniversitySystem::removeFacultyMember(const FacultyMember &member)
+{
+    for (auto it = facultyMembers.begin(); it != facultyMembers.end(); ++it)
+    {
+        if (it->getId() == member.getId())
+        {
+            facultyMembers.erase(it);
+            return;
+        }
+    }
+    std::cout << "Faculty member not found!" << std::endl;
+}
+
 void UniversitySystem::viewStudentDetails(int studentId) const
 {
     for (const auto &student : students)
@@ -66,6 +93,26 @@ void UniversitySystem::viewCourseDetails(const std::string &courseName) const
         }
     }
     std::cout << "Course not found!" << std::endl;
+}
+
+// removal
+
+void UniversitySystem ::removeBranch(const Branch &branch)
+{
+    for (auto it = branchSections.begin(); it != branchSections.end(); ++it)
+    {
+        if (it->first.getBranchName() == branch.getBranchName())
+        {
+            branchSections.erase(it);
+            break;
+        }
+    }
+
+    auto it = std ::find(branches.begin(), branches.end(), branch);
+    if (it != branches.end())
+    {
+        branches.erase(it);
+    }
 }
 
 void UniversitySystem::viewBranchFaculty(const Branch &branch) const

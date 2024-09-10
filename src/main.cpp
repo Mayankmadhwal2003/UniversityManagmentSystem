@@ -4,6 +4,7 @@
 #include "../include/course.h"
 #include "../include/transaction.h"
 #include "../include/UNiversitySystem.h"
+#include "../include/user.h"
 
 int main()
 {
