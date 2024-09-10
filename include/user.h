@@ -14,6 +14,7 @@ public:
     int getId() const;
     virtual void viewDetails() const;
     std ::string getBranchName() const {};
+    
 
 protected:
     std::string name;
